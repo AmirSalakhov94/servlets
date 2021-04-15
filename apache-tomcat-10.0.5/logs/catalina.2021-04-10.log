@@ -1,0 +1,131 @@
+10-Apr-2021 07:47:07.498 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.5
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 30 2021 08:19:50 UTC
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.5.0
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             10.0
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-16
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            16+36-2231
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:47:07.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\conf\logging.properties
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\temp
+10-Apr-2021 07:47:07.528 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\01\AppData\Local\Microsoft\WindowsApps;;.]
+10-Apr-2021 07:47:07.731 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:47:07.757 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [395] milliseconds
+10-Apr-2021 07:47:07.788 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-Apr-2021 07:47:07.788 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.5]
+10-Apr-2021 07:47:07.804 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\docs]
+10-Apr-2021 07:47:08.007 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\docs] has finished in [203] ms
+10-Apr-2021 07:47:08.007 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\examples]
+10-Apr-2021 07:47:08.331 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\examples] has finished in [324] ms
+10-Apr-2021 07:47:08.331 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\host-manager]
+10-Apr-2021 07:47:08.363 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\host-manager] has finished in [32] ms
+10-Apr-2021 07:47:08.363 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\manager]
+10-Apr-2021 07:47:08.394 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\manager] has finished in [31] ms
+10-Apr-2021 07:47:08.394 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\ROOT]
+10-Apr-2021 07:47:08.409 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\ROOT] has finished in [15] ms
+10-Apr-2021 07:47:08.425 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:47:08.456 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [707] milliseconds
+10-Apr-2021 07:51:39.626 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:51:39.652 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-Apr-2021 07:51:39.652 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:51:39.701 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:51:53.755 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.5
+10-Apr-2021 07:51:53.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 30 2021 08:19:50 UTC
+10-Apr-2021 07:51:53.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.5.0
+10-Apr-2021 07:51:53.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+10-Apr-2021 07:51:53.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             10.0
+10-Apr-2021 07:51:53.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+10-Apr-2021 07:51:53.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-16
+10-Apr-2021 07:51:53.774 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            16+36-2231
+10-Apr-2021 07:51:53.774 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-Apr-2021 07:51:53.774 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:51:53.774 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\conf\logging.properties
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:51:53.779 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\temp
+10-Apr-2021 07:51:53.791 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\01\AppData\Local\Microsoft\WindowsApps;;.]
+10-Apr-2021 07:51:53.987 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:51:54.003 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [388] milliseconds
+10-Apr-2021 07:51:54.034 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-Apr-2021 07:51:54.034 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.5]
+10-Apr-2021 07:51:54.041 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\serlvets-1.0.war]
+10-Apr-2021 07:51:54.353 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+10-Apr-2021 07:51:54.412 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\serlvets-1.0.war] has finished in [371] ms
+10-Apr-2021 07:51:54.429 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\docs]
+10-Apr-2021 07:51:54.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\docs] has finished in [17] ms
+10-Apr-2021 07:51:54.445 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\examples]
+10-Apr-2021 07:51:54.757 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\examples] has finished in [312] ms
+10-Apr-2021 07:51:54.757 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\host-manager]
+10-Apr-2021 07:51:54.789 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\host-manager] has finished in [32] ms
+10-Apr-2021 07:51:54.789 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\manager]
+10-Apr-2021 07:51:54.820 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\manager] has finished in [31] ms
+10-Apr-2021 07:51:54.820 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Установка веб приложения в папку [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\ROOT]
+10-Apr-2021 07:51:54.851 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\ROOT] has finished in [31] ms
+10-Apr-2021 07:51:54.851 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:51:54.901 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [889] milliseconds
+10-Apr-2021 07:53:39.625 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:53:39.652 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-Apr-2021 07:53:39.668 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:53:39.699 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:54:14.461 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.5
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 30 2021 08:19:50 UTC
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.5.0
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия ОС:             10.0
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Архитектура:           amd64
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-16
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Версия JVM:            16+36-2231
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:54:14.468 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\conf\logging.properties
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\temp
+10-Apr-2021 07:54:14.479 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Kubernetes\Minikube;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\01\AppData\Local\Microsoft\WindowsApps;;.]
+10-Apr-2021 07:54:14.697 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:54:14.713 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [400] milliseconds
+10-Apr-2021 07:54:14.744 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-Apr-2021 07:54:14.744 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.5]
+10-Apr-2021 07:54:14.751 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\ROOT.war]
+10-Apr-2021 07:54:15.079 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+10-Apr-2021 07:54:15.139 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\01\IdeaProjects\02. Servlets\apache-tomcat-10.0.5\webapps\ROOT.war] has finished in [387] ms
+10-Apr-2021 07:54:15.139 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:54:15.186 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [471] milliseconds
+10-Apr-2021 07:54:23.972 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:54:23.997 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-Apr-2021 07:54:23.997 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Apr-2021 07:54:24.043 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

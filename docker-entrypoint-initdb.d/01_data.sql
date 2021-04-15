@@ -1,0 +1,2 @@
+INSERT INTO users(login, password, type_restore_issue, value_restore_issue, roles)
+VALUES ('admin', '$2y$12$wWUqRQGmGUn/jpuojnpVSOaH21yTeZrzxBnskqhGtOZdcLN.CITOu', 'NAME_FIRST_PET', 'петя', '{ROLE_ADMIN, ROLE_USER}');
