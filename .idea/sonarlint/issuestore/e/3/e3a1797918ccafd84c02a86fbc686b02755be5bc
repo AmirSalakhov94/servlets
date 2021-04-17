@@ -1,9 +1,0 @@
-
-F
-java:S1948"+Make "errorCtrl" transient or serializable.(©ƒÆª8Õà¯Œ/
-Q
-java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8Õà¯Œ/
-€
-java:S1128"fRemove this unused import 'org.springframework.context.annotation.AnnotationConfigApplicationContext'.(€¡¹;8Õà¯Œ/
-C
-java:S1948"(Make "routes" transient or serializable.(´í¾8Õà¯Œ/
