@@ -57,7 +57,8 @@ public class AuthRepository {
                 final var conn = ds.getConnection();
                 final var stmt = conn.prepareStatement(
                         """ 
-                                UPDATE users SET password = ? WHERE login = ? RETURNING id;
+                                UPDATE users SET password = ?, modified = CURRENT_TIMESTAMP 
+                                WHERE login = ? RETURNING id;
                                 """
                 );
         ) {
@@ -222,12 +223,13 @@ public class AuthRepository {
         }
     }
 
-    public void oldRestoreKeyDelete(String key) {
+    public void deleteOldRestoreKeyAndExpired(String key) {
         try (
                 final var conn = ds.getConnection();
                 final var stmt = conn.prepareStatement(
                         """
-                                DELETE FROM users_password_restore WHERE key = ?;
+                                DELETE FROM users_password_restore
+                                WHERE key = ? OR created < NOW() - INTERVAL '5 minute';
                                 """
                 );
         ) {

@@ -20,7 +20,7 @@ import java.io.IOException;
 @Controller
 @RequiredArgsConstructor
 public class AuthController {
-    private static final String REPLACE_PASSWORD_URL = "replace/password/key=";
+
     private static final String CONTENT_TYPE = "Content-Type";
     private static final String KEY = "key";
     private static final String AUTH = "AUTH";
@@ -88,7 +88,7 @@ public class AuthController {
         }
     }
 
-    public void restore(HttpServletRequest request, HttpServletResponse response) {
+    public void restoreKey(HttpServletRequest request, HttpServletResponse response) {
         try {
             if (!converter.canRead(request.getHeader(CONTENT_TYPE), RestoreDto.class)) {
                 response.sendError(415, MEDIA_TYPE_NOT_SUPPORTED);
@@ -96,10 +96,10 @@ public class AuthController {
             }
 
             final var restore = converter.read(request.getReader(), RestoreDto.class);
-            final var key = service.restore(new RestoreModel(restore.getLogin(),
+            final var key = service.getRestoreKey(new RestoreModel(restore.getLogin(),
                     restore.getTypeRestoreIssue(), restore.getValueOnTypeRestoreIssue()));
 
-            response.sendRedirect(request.getContextPath() + REPLACE_PASSWORD_URL + key);
+            converter.write(response.getWriter(), key);
 
         } catch (IOException e) {
             e.printStackTrace();

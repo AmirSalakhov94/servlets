@@ -56,7 +56,6 @@ public class AuthService implements AuthProvider {
     }
 
     public long replacePassword(String login, String password, String key) {
-        repository.expiredRestoreKeyDelete();
         final var exists = repository.restoreKeyExists(login, key);
         if (!exists)
             throw new BadRestoreKeyException("restore key is not active or not exists");
@@ -64,11 +63,11 @@ public class AuthService implements AuthProvider {
         if (password.length() < 8)
             throw new PasswordPolicyViolationException("must be longer than 8");
 
-        repository.oldRestoreKeyDelete(key);
+        repository.deleteOldRestoreKeyAndExpired(key);
         return repository.replacePassword(login, hasher.hash(password));
     }
 
-    public String restore(RestoreModel restore) {
+    public String getRestoreKey(RestoreModel restore) {
         final var typeRestoreIssue = restore.getTypeRestoreIssue();
         if (typeRestoreIssue == null)
             throw new IncorrectRequestParametersException("Type restore issue is null");

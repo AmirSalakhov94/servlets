@@ -22,7 +22,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "login": "user",
+  "login": "user1",
   "password": "secret99"
 }
 
@@ -114,7 +114,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/auth/replace/password?key=95642b71-9885-4b7c-a066-e1f479fa09a0
+PUT http://localhost:8080/auth/replace/password?key=ae56c2be-9295-4e19-9200-2a8e1ba5b82e
 Content-Type: application/json
 
 {

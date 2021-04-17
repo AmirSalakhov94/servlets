@@ -33,7 +33,7 @@ public class ApplicationConfiguration {
                 "/auth/register", Map.of(HttpMethods.POST, ctrl::register),
                 "/auth/login", Map.of(HttpMethods.POST, ctrl::login),
                 "/auth/replace/password", Map.of(HttpMethods.PUT, ctrl::replacePassword),
-                "/auth/restore", Map.of(HttpMethods.POST, ctrl::restore),
+                "/auth/restore", Map.of(HttpMethods.POST, ctrl::restoreKey),
                 "/auth/remove", Map.of(HttpMethods.DELETE, ctrl::removeById)
         );
     }
