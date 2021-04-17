@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres
+    image: library/postgres:11
     ports:
       - 5000:5432
     environment:
@@ -18,4 +18,4 @@ services:
       - POSTGRES_USER=app
       - POSTGRES_PASSWORD=pass
     volumes:
-      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+      - ./docker-entrypoint-init:/docker-entrypoint-initdb.d:ro

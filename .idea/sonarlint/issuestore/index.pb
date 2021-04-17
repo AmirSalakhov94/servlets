@@ -104,10 +104,6 @@ Wsrc/main/java/tech/itpark/proggerhub/exception/IncorrectRequestParametersExcept
 :
 
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
-V
-&docker-entrypoint-initdb.d/01_data.sql,9/d/9d3c3c2977576dfdaa1ce51aaa8fe8d690ffd191
-X
-(docker-entrypoint-initdb.d/00_schema.sql,c/0/c0797ce7bc38d785a7ea102d45899dc7ad2a5ebd
 z
 Jsrc/main/java/tech/itpark/proggerhub/exception/BadRestoreKeyException.java,0/3/0310c5824ce50ed825e35464f3a4e995e199f2ce
 ~
@@ -118,3 +114,11 @@ Rsrc/main/java/tech/itpark/proggerhub/exception/InvalidPasswordFormatException.j
 Ssrc/main/java/tech/itpark/proggerhub/repository/model/UserPasswordRestoreModel.java,d/3/d39709c4a1e70dd4a7fccbdbb37cb99def13b784
 t
 Dsrc/main/java/tech/itpark/proggerhub/service/model/RestoreModel.java,4/0/405f984a0253f593d4166e01846a436ae095bfe1
+=
+.dockerignore,0/5/05a721ebe3ba0754116825ed1359ff1785f4bbac
+T
+$src/main/webapp/WEB-INF/register.jsp,b/c/bc6e7ce0c6952cd2bae32618d60b1fb8ff345090
+R
+"docker-entrypoint-init/01_data.sql,2/b/2b986ca2f7add299ac0c1aebed8573651ab3f4ef
+T
+$docker-entrypoint-init/00_schema.sql,c/0/c04770a7785e2d7721ac2bdf04c8d108e9149af5

@@ -18,6 +18,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class AuthService implements AuthProvider {
+
     private final AuthRepository repository;
     private final PasswordHasher hasher;
     private final TokenGenerator tokenGenerator;
@@ -56,13 +57,14 @@ public class AuthService implements AuthProvider {
 
     public long replacePassword(String login, String password, String key) {
         repository.expiredRestoreKeyDelete();
-        boolean exists = repository.restoreKeyExists(login, key);
+        final var exists = repository.restoreKeyExists(login, key);
         if (!exists)
             throw new BadRestoreKeyException("restore key is not active or not exists");
 
         if (password.length() < 8)
             throw new PasswordPolicyViolationException("must be longer than 8");
 
+        repository.oldRestoreKeyDelete(key);
         return repository.replacePassword(login, hasher.hash(password));
     }
 
@@ -84,7 +86,8 @@ public class AuthService implements AuthProvider {
 
                     final var key = UUID.randomUUID().toString();
                     repository.saveRestoreKey(u.getLogin(), key);
-                    return "/auth/replace/password?key=" + key;
+
+                    return key;
                 })
                 .orElseThrow(() -> new TypeRestoreIssueNotMatchException(String.format("type restore issue %s not match", typeRestoreIssue)));
     }

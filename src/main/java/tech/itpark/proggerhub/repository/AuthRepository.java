@@ -221,4 +221,21 @@ public class AuthRepository {
             throw new DataAccessException(e);
         }
     }
+
+    public void oldRestoreKeyDelete(String key) {
+        try (
+                final var conn = ds.getConnection();
+                final var stmt = conn.prepareStatement(
+                        """
+                                DELETE FROM users_password_restore WHERE key = ?;
+                                """
+                );
+        ) {
+            int index = 0;
+            stmt.setString(++index, key);
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
+    }
 }

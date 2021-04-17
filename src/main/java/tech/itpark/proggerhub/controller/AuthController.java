@@ -20,10 +20,11 @@ import java.io.IOException;
 @Controller
 @RequiredArgsConstructor
 public class AuthController {
-    public static final String CONTENT_TYPE = "Content-Type";
-    public static final String KEY = "key";
-    public static final String AUTH = "AUTH";
-    public static final String MEDIA_TYPE_NOT_SUPPORTED = "media type not supported";
+    private static final String REPLACE_PASSWORD_URL = "replace/password/key=";
+    private static final String CONTENT_TYPE = "Content-Type";
+    private static final String KEY = "key";
+    private static final String AUTH = "AUTH";
+    private static final String MEDIA_TYPE_NOT_SUPPORTED = "media type not supported";
 
     private final AuthService service;
     private final BodyConverter converter;
@@ -95,9 +96,10 @@ public class AuthController {
             }
 
             final var restore = converter.read(request.getReader(), RestoreDto.class);
-            final var restoreUrl = request.getContextPath() + service.restore(new RestoreModel(restore.getLogin(),
+            final var key = service.restore(new RestoreModel(restore.getLogin(),
                     restore.getTypeRestoreIssue(), restore.getValueOnTypeRestoreIssue()));
-            response.sendRedirect(restoreUrl);
+
+            response.sendRedirect(request.getContextPath() + REPLACE_PASSWORD_URL + key);
 
         } catch (IOException e) {
             e.printStackTrace();
