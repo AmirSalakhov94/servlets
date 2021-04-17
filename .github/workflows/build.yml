@@ -1,20 +1,19 @@
 name: Build
-
 on:
   push:
-    branches: [ master, main ]
-
+    branches: [ master ]
 jobs:
   build:
+    name: Push Docker image to Docker hub
     runs-on: ubuntu-latest
-
-      steps:
-        - uses: actions/checkout@v2
-        - name: Push to GitHub Packages
-          uses: docker/build-push-action@v1
-          with:
-            username: ${{ github.actor }}
-            password: ${{ secrets.GHCR_TOKEN }}
-            registry: ghcr.io
-            repository: amirsalakhov94/servlets
-            tag_with_ref: true
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_TOKEN }}
+          repository: amirsalakhov94/servlets
+          registry: ghcr.io
+          tag_with_ref: true
