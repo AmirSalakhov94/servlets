@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import tech.itpark.proggerhub.security.AuthProvider;
 import tech.itpark.servlet.Middleware;
 
+import static tech.itpark.proggerhub.consts.Header.AUTHORIZATION;
+
 @Component
 @RequiredArgsConstructor
 public class Authenticator implements Middleware {
@@ -20,7 +22,7 @@ public class Authenticator implements Middleware {
       HttpServletRequest request,
       HttpServletResponse response
   ) {
-    final var token = request.getHeader("Authorization");
+    final var token = request.getHeader(AUTHORIZATION.getValue());
     final var auth = provider.authenticate(token);
     // 1. Singleton (not work)
     // AuthenticationHolder.getInstance().setAuth(auth);

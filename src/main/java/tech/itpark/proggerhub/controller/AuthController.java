@@ -17,11 +17,12 @@ import tech.itpark.servlet.ContentTypes;
 
 import java.io.IOException;
 
+import static tech.itpark.proggerhub.consts.Header.CONTENT_TYPE;
+
 @Controller
 @RequiredArgsConstructor
 public class AuthController {
 
-    private static final String CONTENT_TYPE = "Content-Type";
     private static final String KEY = "key";
     private static final String AUTH = "AUTH";
     private static final String MEDIA_TYPE_NOT_SUPPORTED = "media type not supported";
@@ -31,7 +32,7 @@ public class AuthController {
 
     public void register(HttpServletRequest request, HttpServletResponse response) {
         try {
-            if (!converter.canRead(request.getHeader(CONTENT_TYPE), UserDto.class)) {
+            if (!converter.canRead(request.getHeader(CONTENT_TYPE.getValue()), UserDto.class)) {
                 response.sendError(415, MEDIA_TYPE_NOT_SUPPORTED);
                 return;
             }
@@ -40,7 +41,7 @@ public class AuthController {
             final var id = service.register(new UserModel(dto.getLogin(), dto.getPassword(),
                     dto.getTypeRestoreIssue(), dto.getValueOnRestoreIssue()));
 
-            response.addHeader(CONTENT_TYPE, ContentTypes.APPLICATION_JSON);
+            response.addHeader(CONTENT_TYPE.getValue(), ContentTypes.APPLICATION_JSON);
             converter.write(response.getWriter(), new UserIdDto(id));
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,7 +50,7 @@ public class AuthController {
 
     public void login(HttpServletRequest request, HttpServletResponse response) {
         try {
-            if (!converter.canRead(request.getHeader(CONTENT_TYPE), UserDto.class)) {
+            if (!converter.canRead(request.getHeader(CONTENT_TYPE.getValue()), UserDto.class)) {
                 response.sendError(415, MEDIA_TYPE_NOT_SUPPORTED);
                 return;
             }
@@ -58,7 +59,7 @@ public class AuthController {
             final var token = service.login(new UserModel(dto.getLogin(), dto.getPassword(),
                     dto.getTypeRestoreIssue(), dto.getValueOnRestoreIssue()));
 
-            response.addHeader(CONTENT_TYPE, ContentTypes.APPLICATION_JSON);
+            response.addHeader(CONTENT_TYPE.getValue(), ContentTypes.APPLICATION_JSON);
             converter.write(response.getWriter(), new UserTokenDto(token));
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,7 +73,7 @@ public class AuthController {
 
     public void replacePassword(HttpServletRequest request, HttpServletResponse response) {
         try {
-            if (!converter.canRead(request.getHeader(CONTENT_TYPE), UserDto.class)) {
+            if (!converter.canRead(request.getHeader(CONTENT_TYPE.getValue()), UserDto.class)) {
                 response.sendError(415, MEDIA_TYPE_NOT_SUPPORTED);
                 return;
             }
@@ -81,7 +82,7 @@ public class AuthController {
             final var dto = converter.read(request.getReader(), UserDto.class);
             final var id = service.replacePassword(dto.getLogin(), dto.getPassword(), key);
 
-            response.addHeader(CONTENT_TYPE, ContentTypes.APPLICATION_JSON);
+            response.addHeader(CONTENT_TYPE.getValue(), ContentTypes.APPLICATION_JSON);
             converter.write(response.getWriter(), new UserIdDto(id));
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,7 +91,7 @@ public class AuthController {
 
     public void restoreKey(HttpServletRequest request, HttpServletResponse response) {
         try {
-            if (!converter.canRead(request.getHeader(CONTENT_TYPE), RestoreDto.class)) {
+            if (!converter.canRead(request.getHeader(CONTENT_TYPE.getValue()), RestoreDto.class)) {
                 response.sendError(415, MEDIA_TYPE_NOT_SUPPORTED);
                 return;
             }

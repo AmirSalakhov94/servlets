@@ -24,3 +24,5 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+/apache-tomcat-10.0.5/
+/.idea/
