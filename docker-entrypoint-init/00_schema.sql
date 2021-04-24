@@ -13,9 +13,19 @@ CREATE TABLE users
 
 CREATE TABLE users_password_restore
 (
-    login   TEXT      NOT NULL,
-    key     TEXT PRIMARY KEY,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    login    TEXT      NOT NULL,
+    key      TEXT PRIMARY KEY,
+    is_valid BOOLEAN            DEFAULT FALSE,
+    modified TIMESTAMP,
+    created  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE user_number_attempts
+(
+    login    TEXT UNIQUE NOT NULL,
+    num      INT                  DEFAULT 0,
+    modified TIMESTAMP,
+    created  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE tokens

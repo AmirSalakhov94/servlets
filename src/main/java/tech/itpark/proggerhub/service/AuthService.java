@@ -19,6 +19,9 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AuthService implements AuthProvider {
 
+    public static final long INTERVAL_RESTORE_KEY = 300;
+    public static final long INTERVAL = 180;
+    private static final int MAX_USER_NUMBER_ATTEMPTS = 5;
     private final AuthRepository repository;
     private final PasswordHasher hasher;
     private final TokenGenerator tokenGenerator;
@@ -58,12 +61,12 @@ public class AuthService implements AuthProvider {
     public long replacePassword(String login, String password, String key) {
         final var exists = repository.restoreKeyExists(login, key);
         if (!exists)
-            throw new BadRestoreKeyException("restore key is not active or not exists");
+            throw new BadRestoreKeyException("restore key is not active or not exists or not valid");
 
         if (password.length() < 8)
             throw new PasswordPolicyViolationException("must be longer than 8");
 
-        repository.deleteOldRestoreKeyAndExpired(key);
+        repository.updateRestoreKey(login, key, INTERVAL_RESTORE_KEY);
         return repository.replacePassword(login, hasher.hash(password));
     }
 
@@ -76,7 +79,19 @@ public class AuthService implements AuthProvider {
         if (valueRestoreIssue == null || valueRestoreIssue.isEmpty())
             throw new IncorrectRequestParametersException("Value restore issue is null or empty");
 
-        final var user = repository.findUserWithRestoreByLogin(restore.getLogin());
+        String login = restore.getLogin();
+        repository.clearOldUserNumberAttempts(INTERVAL);
+        Integer userNumberAttempts = repository.getUserNumberAttempts(login);
+        if (userNumberAttempts == null) {
+            userNumberAttempts = repository.saveUserNumberAttempts(login);
+        }
+        if (userNumberAttempts > MAX_USER_NUMBER_ATTEMPTS)
+            throw new LimitNumberReplacePasswordException("limit restore password exceeded");
+
+        userNumberAttempts++;
+        repository.updateUserNumberAttempts(login, userNumberAttempts);
+
+        final var user = repository.findUserWithRestoreByLogin(login);
         return user.filter(u -> typeRestoreIssue == u.getTypeRestoreIssue())
                 .map(u -> {
                     final var currentValueRestoreIssue = u.getValueOnRestoreIssue();

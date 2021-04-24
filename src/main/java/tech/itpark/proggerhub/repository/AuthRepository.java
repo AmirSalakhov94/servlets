@@ -9,6 +9,7 @@ import tech.itpark.proggerhub.repository.model.*;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Optional;
 import java.util.Set;
 
@@ -32,7 +33,7 @@ public class AuthRepository {
                                     INSERT INTO users(login, password, type_restore_issue, value_restore_issue) 
                                     VALUES(?, ?, ?, ?) RETURNING id;
                                 """
-                );
+                )
         ) {
             var index = 0;
             stmt.setString(++index, model.getLogin());
@@ -60,7 +61,7 @@ public class AuthRepository {
                                 UPDATE users SET password = ?, modified = CURRENT_TIMESTAMP 
                                 WHERE login = ? RETURNING id;
                                 """
-                );
+                )
         ) {
             var index = 0;
             stmt.setString(++index, newPassword);
@@ -86,7 +87,7 @@ public class AuthRepository {
                                 SELECT id, login, password 
                                 FROM users 
                                 WHERE login = ?;
-                                """);
+                                """)
         ) {
             var index = 0;
             stmt.setString(++index, login);
@@ -107,7 +108,7 @@ public class AuthRepository {
                                 SELECT login, password, type_restore_issue, value_restore_issue 
                                 FROM users 
                                 WHERE login = ?;
-                                """);
+                                """)
         ) {
             var index = 0;
             stmt.setString(++index, login);
@@ -125,7 +126,7 @@ public class AuthRepository {
                 final var conn = ds.getConnection();
                 final var stmt = conn.prepareStatement(
                         "INSERT INTO tokens(user_id, token) VALUES(?, ?);"
-                );
+                )
         ) {
             var index = 0;
             stmt.setLong(++index, model.getId());
@@ -147,7 +148,7 @@ public class AuthRepository {
                                   JOIN tokens t on u.id = t.user_id
                                   WHERE t.token = ?;
                                 """
-                );
+                )
         ) {
             int index = 0;
             stmt.setString(++index, token);
@@ -171,13 +172,14 @@ public class AuthRepository {
                 final var conn = ds.getConnection();
                 final var stmt = conn.prepareStatement(
                         """
-                                    INSERT INTO users_password_restore(login, key) VALUES(?, ?);
+                                    INSERT INTO users_password_restore(login, key, is_valid) VALUES(?, ?, ?);
                                 """
-                );
+                )
         ) {
             var index = 0;
             stmt.setString(++index, login);
             stmt.setString(++index, key);
+            stmt.setBoolean(++index, true);
             stmt.execute();
         } catch (SQLException e) {
             throw new DataAccessException(e);
@@ -190,9 +192,9 @@ public class AuthRepository {
                 final var stmt = conn.prepareStatement(
                         """
                                   SELECT 1 FROM users_password_restore
-                                  WHERE login = ? AND key = ?;
+                                  WHERE login = ? AND key = ? AND is_valid IS TRUE;
                                 """
-                );
+                )
         ) {
             int index = 0;
             stmt.setString(++index, login);
@@ -207,34 +209,98 @@ public class AuthRepository {
         }
     }
 
-    public void expiredRestoreKeyDelete() {
+    public void updateRestoreKey(String login, String key, long interval) {
         try (
                 final var conn = ds.getConnection();
                 final var stmt = conn.prepareStatement(
-                        """
-                                DELETE FROM users_password_restore
-                                WHERE created < NOW() - INTERVAL '5 minute';
-                                  """
-                );
+                        """ 
+                                UPDATE users_password_restore SET is_valid = false, modified = NOW()
+                                WHERE login = ? AND (key = ? OR created < ?);
+                                """
+                )
         ) {
+            Timestamp t = new Timestamp(System.currentTimeMillis() - interval);
+            var index = 0;
+            stmt.setString(++index, login);
+            stmt.setString(++index, key);
+            stmt.setTimestamp(++index, t);
             stmt.execute();
         } catch (SQLException e) {
             throw new DataAccessException(e);
         }
     }
 
-    public void deleteOldRestoreKeyAndExpired(String key) {
+    public Integer getUserNumberAttempts(String login) {
         try (
                 final var conn = ds.getConnection();
                 final var stmt = conn.prepareStatement(
                         """
-                                DELETE FROM users_password_restore
-                                WHERE key = ? OR created < NOW() - INTERVAL '5 minute';
+                                  SELECT num FROM user_number_attempts
+                                  WHERE login = ?;
                                 """
-                );
+                )
         ) {
             int index = 0;
-            stmt.setString(++index, key);
+            stmt.setString(++index, login);
+            try (
+                    final var rs = stmt.executeQuery();
+            ) {
+                return rs.next() ? rs.getInt(1) : null;
+            }
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
+    }
+
+    public int saveUserNumberAttempts(String login) {
+        try (
+                final var conn = ds.getConnection();
+                final var stmt = conn.prepareStatement(
+                        """
+                                    INSERT INTO user_number_attempts(login, num) VALUES(?, 1);
+                                """
+                )
+        ) {
+            int index = 0;
+            stmt.setString(++index, login);
+            stmt.execute();
+            return 1;
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
+    }
+
+    public void updateUserNumberAttempts(String login, Integer num) {
+        try (
+                final var conn = ds.getConnection();
+                final var stmt = conn.prepareStatement(
+                        """ 
+                                UPDATE user_number_attempts SET num = ?, modified = NOW()
+                                WHERE login = ?;
+                                """
+                )
+        ) {
+            var index = 0;
+            stmt.setInt(++index, num);
+            stmt.setString(++index, login);
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
+    }
+
+    public void clearOldUserNumberAttempts(long interval) {
+        try (
+                final var conn = ds.getConnection();
+                final var stmt = conn.prepareStatement(
+                        """
+                                DELETE FROM user_number_attempts WHERE modified < ?;
+                                """
+                )
+        ) {
+            Timestamp t = new Timestamp(System.currentTimeMillis() - interval);
+            int index = 0;
+            stmt.setTimestamp(++index, t);
             stmt.execute();
         } catch (SQLException e) {
             throw new DataAccessException(e);

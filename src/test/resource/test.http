@@ -114,7 +114,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/auth/replace/password?key=20c77a9d-2b53-4591-b688-ec04bd1fda79
+PUT http://localhost:8080/auth/replace/password?key=28443dca-a040-4522-a238-f89b85a61b6f
 Content-Type: application/json
 
 {
