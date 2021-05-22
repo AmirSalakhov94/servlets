@@ -215,15 +215,14 @@ public class AuthRepository {
                 final var stmt = conn.prepareStatement(
                         """ 
                                 UPDATE users_password_restore SET is_valid = false, modified = NOW()
-                                WHERE login = ? AND (key = ? OR created < ?);
+                                WHERE login = ? AND (key = ? OR created < TO_TIMESTAMP((EXTRACT(EPOCH FROM CURRENT_TIMESTAMP) * 1000) - ?));
                                 """
                 )
         ) {
-            Timestamp t = new Timestamp(System.currentTimeMillis() - interval);
             var index = 0;
             stmt.setString(++index, login);
             stmt.setString(++index, key);
-            stmt.setTimestamp(++index, t);
+            stmt.setLong(++index, interval);
             stmt.execute();
         } catch (SQLException e) {
             throw new DataAccessException(e);
